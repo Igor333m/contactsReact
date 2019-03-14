@@ -20,11 +20,12 @@ class App extends Component {
   * Remove selected contact from the list
   */
   removeContact = (contact) => {
-    this.setState((currentState) => ({
-      contacts: currentState.contacts.filter((c) => {
+    this.setState( (currentState) => ({
+      contacts: currentState.contacts.filter( (c) => {
         return c.id !== contact.id;
-      })
-    }))
+      } )
+    }) )
+    ContactsAPI.remove(contact);
   }
 
   render() {
